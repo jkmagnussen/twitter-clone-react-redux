@@ -17,8 +17,6 @@ If you feel like there's a major problem, please open an issue to discuss the pr
 
 ## License
 
-MIT
-
 Tweet view broken up into Components.
 
 View broken into the following React Components:
