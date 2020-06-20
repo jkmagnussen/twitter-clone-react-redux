@@ -1,11 +1,11 @@
 import { saveLikeToggle } from "../utils/api";
 
-export const RECIEVE_TWEETS = "RECIEVE_TWEETS";
+export const RECEIVE_TWEETS = "RECEIVE_TWEETS";
 export const TOGGLE_TWEET = "TOGGLE_TWEET";
 
 export function recieveTweets(tweets) {
   return {
-    type: RECIEVE_TWEETS,
+    type: RECEIVE_TWEETS,
     tweets,
   };
 }
