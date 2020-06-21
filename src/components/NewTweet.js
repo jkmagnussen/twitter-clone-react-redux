@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { handleAddTweet } from "../actions/tweets";
 
 class NewTweet extends Component {
   state = {
     text: "",
   };
-
   handleChange = (e) => {
     const text = e.target.value;
 
@@ -13,24 +13,24 @@ class NewTweet extends Component {
       text,
     }));
   };
-
   handleSubmit = (e) => {
     e.preventDefault();
 
     const { text } = this.state;
+    const { dispatch, id } = this.props;
 
-    // todo Add Tweet to store
+    dispatch(handleAddTweet(text, id));
 
-    console.log("New Tweet: ", text);
-
-    this.setState(() => {
-      text: "";
-    });
+    this.setState(() => ({
+      text: "",
+    }));
   };
   render() {
     const { text } = this.state;
 
-    // Redirect to if submitted
+    //{
+    /* todo: Redirect to / if submitted */
+    //}
 
     const tweetLeft = 280 - text.length;
 
@@ -45,10 +45,9 @@ class NewTweet extends Component {
             className="textarea"
             maxLength={280}
           />
-
           {tweetLeft <= 100 && <div className="tweet-length">{tweetLeft}</div>}
           <button className="btn" type="submit" disabled={text === ""}>
-            submit
+            Submit
           </button>
         </form>
       </div>
@@ -56,8 +55,4 @@ class NewTweet extends Component {
   }
 }
 
-function mapStateToProps({ authedUser }) {
-  return {};
-}
-
-export default connect(mapStateToProps)(NewTweet);
+export default connect()(NewTweet);
