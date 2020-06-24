@@ -7,6 +7,7 @@ import LoadingBar from "react-redux-loading";
 import NewTweet from "./NewTweet";
 import TweetPage from "./TweetPage";
 import Nav from "./Nav";
+import Footer from "./Footer/ExternalFooter/Footer";
 
 class App extends Component {
   componentDidMount() {
@@ -27,6 +28,7 @@ class App extends Component {
               </div>
             )}
           </div>
+          <Footer />
         </Fragment>
       </Router>
     );
